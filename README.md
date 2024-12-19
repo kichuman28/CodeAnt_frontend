@@ -4,6 +4,10 @@ This project is a frontend implementation for CodeAnt AI's developer platform, c
 
 ![image](https://github.com/user-attachments/assets/a265a289-b5d2-4cfc-a6a9-c10eb9328b4a)
 ![image](https://github.com/user-attachments/assets/d90d5cb0-4fff-4470-bf50-3bbef94f3de9)
+![image](https://github.com/user-attachments/assets/be40d6b8-38c7-4ea1-9746-a0a6b3f7ce6f)
+![image](https://github.com/user-attachments/assets/28e0e941-2e4d-447b-92d3-d771100d9b26)
+![image](https://github.com/user-attachments/assets/7adc1f03-fff3-4ac9-b5e1-7ebd1b8a8bd9)
+
 
 
 ## Features
