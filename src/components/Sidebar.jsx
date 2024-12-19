@@ -48,15 +48,15 @@ export const Sidebar = ({ mobile = false, onItemClick }) => {
       <UserDropdown />
       
       <div className={`flex flex-col ${!mobile && 'flex-1'} py-4`}>
-        <MenuItem Icon={HomeIcon} text="Repositories" isActive={true} onClick={onItemClick} />
-        <MenuItem Icon={CodeIcon} text="AI Code Review" onClick={onItemClick} />
-        <MenuItem Icon={CloudIcon} text="Cloud Security" onClick={onItemClick} />
-        <MenuItem Icon={BookIcon} text="How to Use" onClick={onItemClick} />
-        <MenuItem Icon={SettingsIcon} text="Settings" onClick={onItemClick} />
+        <MenuItem Icon={HomeIcon} text={<span className="font-semibold">Repositories</span>} isActive={true} onClick={onItemClick} />
+        <MenuItem Icon={CodeIcon} text={<span className="font-semibold">AI Code Review</span>} onClick={onItemClick} />
+        <MenuItem Icon={CloudIcon} text={<span className="font-semibold">Cloud Security</span>} onClick={onItemClick} />
+        <MenuItem Icon={BookIcon} text={<span className="font-semibold">How to Use</span>} onClick={onItemClick} />
+        <MenuItem Icon={SettingsIcon} text={<span className="font-semibold">Settings</span>} onClick={onItemClick} />
         
         <div className={mobile ? '' : 'mt-auto'}>
-          <MenuItem Icon={SupportIcon} text="Support" onClick={onItemClick} />
-          <MenuItem Icon={LogoutIcon} text="Logout" onClick={onItemClick} />
+          <MenuItem Icon={SupportIcon} text={<span className="font-semibold">Support</span>} onClick={onItemClick} />
+          <MenuItem Icon={LogoutIcon} text={<span className="font-semibold">Logout</span>} onClick={onItemClick} />
         </div>
       </div>
     </div>
