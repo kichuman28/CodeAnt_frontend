@@ -2,6 +2,7 @@ import { useState } from 'react';
 import StatsCard from '../components/StatsCard';
 import IssuesCard from '../components/IssuesCard';
 import LoginOptions from '../components/LoginOptions';
+import { AntLogo } from '../ui/icons/AntLogo';
 
 const LoginPage = () => {
   const [isSaaS, setIsSaaS] = useState(true);
@@ -27,8 +28,13 @@ const LoginPage = () => {
           <div className="bg-white rounded-lg shadow-lg">
             {/* Top Section */}
             <div className="p-6">
-              <img src="/codeant-logo.png" alt="CodeAnt AI" className="h-8 mx-auto mb-4" />
-              <h1 className="text-2xl font-semibold mb-8">Welcome to CodeAnt AI</h1>
+              <div className="flex flex-col items-center">
+                <div className="flex items-center gap-2 mb-4">
+                  <AntLogo className="h-8" />
+                  <span className="text-xl font-semibold">CodeAnt AI</span>
+                </div>
+                <h1 className="text-2xl font-semibold mb-8 text-center">Welcome to CodeAnt AI</h1>
+              </div>
               
               <div className="flex mb-0">
                 <button
