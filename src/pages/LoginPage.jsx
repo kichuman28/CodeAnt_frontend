@@ -10,8 +10,8 @@ const LoginPage = () => {
 
   return (
     <div className="min-h-screen flex">
-      {/* Left Section */}
-      <div className="w-1/2 bg-gray-50 p-12 flex flex-col justify-center items-center relative">
+      {/* Left Section - Hidden on mobile */}
+      <div className="hidden md:w-1/2 md:flex md:bg-gray-50 md:p-12 md:flex-col md:justify-center md:items-center md:relative">
         <div className="max-w-md w-full relative">
           <StatsCard />
           <div className="absolute -right-8 -bottom-20">
@@ -21,11 +21,10 @@ const LoginPage = () => {
         <BackgroundLogo className="absolute bottom-0 left-0 opacity-60 w-64" />
       </div>
 
-      {/* Right Section */}
-      <div className="w-1/2 p-12 flex flex-col items-center justify-center">
+      {/* Right Section - Full width on mobile */}
+      <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col items-center justify-center">
         <div className="w-full max-w-md">
           <div className="bg-white rounded-lg shadow-lg">
-            {/* Top Section */}
             <div className="p-6">
               <div className="flex flex-col items-center">
                 <div className="flex items-center gap-2 mb-4">
@@ -55,18 +54,16 @@ const LoginPage = () => {
               </div>
             </div>
 
-            {/* Divider */}
             <div className="h-px bg-gray-200" />
 
-            {/* Login Options Section */}
             <div className="p-6">
               <LoginOptions isSaaS={isSaaS} />
             </div>
           </div>
 
-          <p className="text-center text-sm text-gray-600 mt-6">
+          <p className="text-center text-sm text-black mt-6">
             By signing up you agree to the{' '}
-            <a href="#" className="text-blue-500 hover:underline">
+            <a href="#" className="font-bold hover:underline">
               Privacy Policy
             </a>
             .

@@ -2,12 +2,12 @@ import { AntLogo } from '../ui/icons/AntLogo';
 
 const StatsCard = () => {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 mb-16">
+    <div className="bg-white rounded-2xl shadow-lg p-6 mb-16">
       <div className="flex items-center gap-2 mb-4">
         <AntLogo className="h-8" />
-        <p className="text-gray-800">AI to Detect & Autofix Bad Code</p>
+        <p className="text-gray-800 font-bold">AI to Detect & Autofix Bad Code</p>
       </div>
-      <div className="h-px bg-gray-200 mb-4" />
+      <div className="h-px bg-gray-200 mb-4 -mx-6" />
       <div className="flex justify-between">
         <div className="text-center">
           <p className="font-bold">30+</p>
