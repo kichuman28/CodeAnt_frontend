@@ -29,7 +29,7 @@ const LoginPage = () => {
               <div className="flex flex-col items-center">
                 <div className="flex items-center gap-2 mb-4">
                   <AntLogo className="h-8" />
-                  <span className="text-xl font-semibold">CodeAnt AI</span>
+                  <span className="text-2xl font-satoshi font-[400]">CodeAnt AI</span>
                 </div>
                 <h1 className="text-2xl font-semibold mb-8 text-center">Welcome to CodeAnt AI</h1>
               </div>
@@ -41,7 +41,7 @@ const LoginPage = () => {
                     isSaaS ? 'bg-blue-500 text-white' : 'bg-gray-100'
                   }`}
                 >
-                  SAAS
+                  <span className="font-semibold">SAAS</span>
                 </button>
                 <button
                   onClick={() => setIsSaaS(false)}
@@ -49,7 +49,7 @@ const LoginPage = () => {
                     !isSaaS ? 'bg-blue-500 text-white' : 'bg-gray-100'
                   }`}
                 >
-                  Self Hosted
+                  <span className="font-semibold">Self Hosted</span>
                 </button>
               </div>
             </div>

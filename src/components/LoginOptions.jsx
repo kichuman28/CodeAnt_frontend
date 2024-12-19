@@ -25,15 +25,15 @@ const LoginOptions = ({ isSaaS }) => {
   };
 
   const saasOptions = [
-    { Icon: GithubIcon, text: "Sign in with Github" },
-    { Icon: BitbucketIcon, text: "Sign in with Bitbucket" },
-    { Icon: AzureIcon, text: "Sign in with Azure DevOps" },
-    { Icon: GitlabIcon, text: "Sign in with GitLab" },
+    { Icon: GithubIcon, text: <span className="font-semibold">Sign in with Github</span> },
+    { Icon: BitbucketIcon, text: <span className="font-semibold">Sign in with Bitbucket</span> },
+    { Icon: AzureIcon, text: <span className="font-semibold">Sign in with Azure DevOps</span> },
+    { Icon: GitlabIcon, text: <span className="font-semibold">Sign in with GitLab</span> },
   ];
 
   const selfHostedOptions = [
-    { Icon: GitlabIcon, text: "Self Hosted GitLab" },
-    { Icon: SSOIcon, text: "Sign in with SSO" },
+    { Icon: GitlabIcon, text: <span className="font-semibold">Self Hosted GitLab</span> },
+    { Icon: SSOIcon, text: <span className="font-semibold">Sign in with SSO</span> },
   ];
 
   const options = isSaaS ? saasOptions : selfHostedOptions;

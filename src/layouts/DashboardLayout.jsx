@@ -13,7 +13,7 @@ export const DashboardLayout = ({ children }) => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <AntLogo className="h-8" />
-            <span className="font-semibold text-xl">CodeAnt AI</span>
+            <span className="font-[400] font-satoshi text-xl">CodeAnt AI</span>
           </div>
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
