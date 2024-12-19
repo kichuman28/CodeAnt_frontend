@@ -34,7 +34,7 @@ const UserDropdown = () => (
 
 export const Sidebar = () => {
   return (
-    <div className="w-64 border-r bg-white flex flex-col">
+    <div className="w-64 border-r bg-white flex flex-col h-full">
       <div className="p-4">
         <div className="flex items-center gap-2">
           <AntLogo className="h-8" />
@@ -52,7 +52,7 @@ export const Sidebar = () => {
         <MenuItem Icon={SettingsIcon} text="Settings" />
       </div>
 
-      <div className="py-4">
+      <div className="mt-auto pb-4">
         <MenuItem Icon={SupportIcon} text="Support" />
         <MenuItem Icon={LogoutIcon} text="Logout" />
       </div>

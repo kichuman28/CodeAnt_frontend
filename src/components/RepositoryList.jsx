@@ -39,20 +39,20 @@ const DUMMY_REPOS = [
 
 export const RepositoryList = () => {
   return (
-    <div className="bg-white -m-6 mt-2">
+    <div className="bg-white -mx-4 md:-m-6 mt-2">
       <div className="h-px bg-gray-200" />
       {DUMMY_REPOS.map((repo, index) => (
         <div key={repo.name}>
           <div className="p-4">
             <div className="flex items-center justify-between">
-              <div>
-                <div className="flex items-center gap-2">
-                  <h3 className="text-lg font-medium">{repo.name}</h3>
-                  <span className="px-2 py-1 text-xs rounded-xl border border-[#B2DDFF] bg-blue-50 text-[#175CD3]">
+              <div className="min-w-0">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h3 className="text-lg font-medium truncate">{repo.name}</h3>
+                  <span className="px-2 py-1 text-xs rounded-xl border border-[#B2DDFF] bg-blue-50 text-[#175CD3] whitespace-nowrap">
                     {repo.isPublic ? 'Public' : 'Private'}
                   </span>
                 </div>
-                <div className="flex items-center gap-8 mt-2 text-sm text-gray-600">
+                <div className="flex items-center gap-4 md:gap-8 mt-2 text-sm text-gray-600 flex-wrap">
                   <span>{repo.language} <span className="text-[#1570EF]">●</span></span>
                   <span className="flex items-center gap-1">
                     <DatabaseIcon className="w-3 h-3" />
