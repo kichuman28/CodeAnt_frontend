@@ -24,31 +24,40 @@ const LoginPage = () => {
       {/* Right Section */}
       <div className="w-1/2 p-12 flex flex-col items-center justify-center">
         <div className="w-full max-w-md">
-          <div className="text-center mb-8">
-            <img src="/codeant-logo.png" alt="CodeAnt AI" className="h-8 mx-auto mb-4" />
-            <h1 className="text-2xl font-semibold mb-8">Welcome to CodeAnt AI</h1>
-            
-            <div className="flex gap-4 mb-8">
-              <button
-                onClick={() => setIsSaaS(true)}
-                className={`flex-1 py-2 px-4 rounded-lg transition-colors ${
-                  isSaaS ? 'bg-blue-500 text-white' : 'bg-white'
-                }`}
-              >
-                SAAS
-              </button>
-              <button
-                onClick={() => setIsSaaS(false)}
-                className={`flex-1 py-2 px-4 rounded-lg transition-colors ${
-                  !isSaaS ? 'bg-blue-500 text-white' : 'bg-white'
-                }`}
-              >
-                Self Hosted
-              </button>
+          <div className="bg-white rounded-lg shadow-lg">
+            {/* Top Section */}
+            <div className="p-6">
+              <img src="/codeant-logo.png" alt="CodeAnt AI" className="h-8 mx-auto mb-4" />
+              <h1 className="text-2xl font-semibold mb-8">Welcome to CodeAnt AI</h1>
+              
+              <div className="flex mb-0">
+                <button
+                  onClick={() => setIsSaaS(true)}
+                  className={`flex-1 py-2 px-4 rounded-lg transition-colors ${
+                    isSaaS ? 'bg-blue-500 text-white' : 'bg-gray-100'
+                  }`}
+                >
+                  SAAS
+                </button>
+                <button
+                  onClick={() => setIsSaaS(false)}
+                  className={`flex-1 py-2 px-4 rounded-lg transition-colors ${
+                    !isSaaS ? 'bg-blue-500 text-white' : 'bg-gray-100'
+                  }`}
+                >
+                  Self Hosted
+                </button>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="h-px bg-gray-200" />
+
+            {/* Login Options Section */}
+            <div className="p-6">
+              <LoginOptions isSaaS={isSaaS} />
             </div>
           </div>
-
-          <LoginOptions isSaaS={isSaaS} />
 
           <p className="text-center text-sm text-gray-600 mt-6">
             By signing up you agree to the{' '}

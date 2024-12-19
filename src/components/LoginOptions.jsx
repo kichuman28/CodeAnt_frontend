@@ -31,7 +31,7 @@ const LoginOptions = ({ isSaaS }) => {
   const options = isSaaS ? saasOptions : selfHostedOptions;
 
   return (
-    <div className="w-full max-w-md">
+    <div className="w-full max-w-md min-h-[280px]">
       {options.map((option, index) => (
         <LoginOption
           key={index}
