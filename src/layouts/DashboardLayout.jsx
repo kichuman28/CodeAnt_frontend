@@ -9,7 +9,7 @@ export const DashboardLayout = ({ children }) => {
   return (
     <div className="flex min-h-screen relative">
       {/* Mobile Header */}
-      <div className="md:hidden fixed top-0 left-0 right-0 bg-white border-b z-20 px-4 py-3">
+      <div className="md:hidden fixed top-0 left-0 right-0 bg-white border-b z-50 px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <AntLogo className="h-8" />
@@ -28,26 +28,36 @@ export const DashboardLayout = ({ children }) => {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden" 
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
-      )}
-
-      {/* Sidebar */}
-      <div className={`fixed md:static inset-y-0 left-0 transform ${
-        isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-      } md:translate-x-0 transition-transform duration-300 ease-in-out z-40`}>
-        <Sidebar />
+      {/* Mobile Menu Dropdown */}
+      <div 
+        className={`md:hidden fixed top-0 left-0 right-0 bg-white z-40 transition-transform duration-300 ease-in-out transform ${
+          isMobileMenuOpen ? 'translate-y-14' : '-translate-y-full'
+        }`}
+      >
+        <div className="p-4">
+          <Sidebar mobile={true} onItemClick={() => setIsMobileMenuOpen(false)} />
+        </div>
       </div>
 
+      {/* Desktop Sidebar */}
+      <aside className="hidden md:block fixed top-0 left-0 h-full w-64">
+        <Sidebar />
+      </aside>
+
       {/* Main Content */}
-      <main className="flex-1 bg-gray-50 min-h-screen pt-16 md:pt-0">
+      <main className="flex-1 bg-gray-50 min-h-screen pt-16 md:pt-0 md:ml-64">
         <div className="p-4 md:p-8">
           {children}
         </div>
       </main>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div 
+          className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
     </div>
   );
 };

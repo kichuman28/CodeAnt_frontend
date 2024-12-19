@@ -8,9 +8,10 @@ import { LogoutIcon } from '../ui/icons/LogoutIcon';
 import { SupportIcon } from '../ui/icons/SupportIcon';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 
-const MenuItem = ({ Icon, text, isActive }) => (
+const MenuItem = ({ Icon, text, isActive, onClick }) => (
   <div className="px-4">
     <button 
+      onClick={onClick}
       className={`w-full flex items-center gap-3 px-4 py-[12px] text-left rounded-lg ${
         isActive 
           ? 'bg-[#1570EF] text-white' 
@@ -32,29 +33,31 @@ const UserDropdown = () => (
   </button>
 );
 
-export const Sidebar = () => {
+export const Sidebar = ({ mobile = false, onItemClick }) => {
   return (
-    <div className="w-64 border-r bg-white flex flex-col h-full">
-      <div className="p-4">
-        <div className="flex items-center gap-2">
-          <AntLogo className="h-8" />
-          <span className="font-semibold text-xl">CodeAnt AI</span>
+    <div className={`${mobile ? 'w-full' : 'w-64'} bg-white flex flex-col ${!mobile && 'border-r h-full'}`}>
+      {!mobile && (
+        <div className="p-4">
+          <div className="flex items-center gap-2">
+            <AntLogo className="h-8" />
+            <span className="font-semibold text-xl">CodeAnt AI</span>
+          </div>
         </div>
-      </div>
+      )}
 
       <UserDropdown />
       
-      <div className="flex flex-col flex-1 py-4">
-        <MenuItem Icon={HomeIcon} text="Repositories" isActive={true} />
-        <MenuItem Icon={CodeIcon} text="AI Code Review" />
-        <MenuItem Icon={CloudIcon} text="Cloud Security" />
-        <MenuItem Icon={BookIcon} text="How to Use" />
-        <MenuItem Icon={SettingsIcon} text="Settings" />
-      </div>
-
-      <div className="mt-auto pb-4">
-        <MenuItem Icon={SupportIcon} text="Support" />
-        <MenuItem Icon={LogoutIcon} text="Logout" />
+      <div className={`flex flex-col ${!mobile && 'flex-1'} py-4`}>
+        <MenuItem Icon={HomeIcon} text="Repositories" isActive={true} onClick={onItemClick} />
+        <MenuItem Icon={CodeIcon} text="AI Code Review" onClick={onItemClick} />
+        <MenuItem Icon={CloudIcon} text="Cloud Security" onClick={onItemClick} />
+        <MenuItem Icon={BookIcon} text="How to Use" onClick={onItemClick} />
+        <MenuItem Icon={SettingsIcon} text="Settings" onClick={onItemClick} />
+        
+        <div className={mobile ? '' : 'mt-auto'}>
+          <MenuItem Icon={SupportIcon} text="Support" onClick={onItemClick} />
+          <MenuItem Icon={LogoutIcon} text="Logout" onClick={onItemClick} />
+        </div>
       </div>
     </div>
   );
