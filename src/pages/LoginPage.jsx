@@ -12,11 +12,13 @@ const LoginPage = () => {
     <div className="min-h-screen flex">
       {/* Left Section */}
       <div className="w-1/2 bg-gray-50 p-12 flex flex-col justify-center items-center relative">
-        <div className="max-w-md w-full">
+        <div className="max-w-md w-full relative">
           <StatsCard />
-          <IssuesCard />
+          <div className="absolute -right-8 -bottom-20">
+            <IssuesCard />
+          </div>
         </div>
-        <BackgroundLogo className="absolute bottom-0 left-0 opacity-60 w-96" />
+        <BackgroundLogo className="absolute bottom-0 left-0 opacity-60 w-64" />
       </div>
 
       {/* Right Section */}
