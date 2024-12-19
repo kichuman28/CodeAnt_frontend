@@ -7,6 +7,7 @@ import { SettingsIcon } from '../ui/icons/SettingsIcon';
 import { LogoutIcon } from '../ui/icons/LogoutIcon';
 import { SupportIcon } from '../ui/icons/SupportIcon';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
+import { useNavigate } from 'react-router-dom';
 
 const MenuItem = ({ Icon, text, isActive, onClick }) => (
   <div className="px-4">
@@ -34,6 +35,16 @@ const UserDropdown = () => (
 );
 
 export const Sidebar = ({ mobile = false, onItemClick }) => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Add any logout logic here if needed
+    navigate('/');
+    if (onItemClick) {
+      onItemClick();
+    }
+  };
+
   return (
     <div className={`${mobile ? 'w-full' : 'w-64'} bg-white flex flex-col ${!mobile && 'border-r h-full'}`}>
       {!mobile && (
@@ -56,7 +67,7 @@ export const Sidebar = ({ mobile = false, onItemClick }) => {
         
         <div className={mobile ? '' : 'mt-auto'}>
           <MenuItem Icon={SupportIcon} text={<span className="font-semibold">Support</span>} onClick={onItemClick} />
-          <MenuItem Icon={LogoutIcon} text={<span className="font-semibold">Logout</span>} onClick={onItemClick} />
+          <MenuItem Icon={LogoutIcon} text={<span className="font-semibold">Logout</span>} onClick={handleLogout} />
         </div>
       </div>
     </div>
