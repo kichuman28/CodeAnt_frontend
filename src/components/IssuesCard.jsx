@@ -1,4 +1,5 @@
 import { StatsIcon } from '../ui/icons/StatsIcon';
+import { UpArrowIcon } from '../ui/icons/UpArrowIcon';
 
 const IssuesCard = () => {
   return (
@@ -10,7 +11,10 @@ const IssuesCard = () => {
           <p className="text-3xl font-bold">500K+</p>
         </div>
         <div className="flex flex-col items-end">
-          <span className="text-left mr-auto font-bold text-[#0049C6]">↑ 14%</span>
+          <div className="flex items-center ">
+            <UpArrowIcon className="w-6 h-6" />
+            <span className="font-bold text-[#0049C6]">14%</span>
+          </div>
           <span className="text-sm text-black">This week</span>
         </div>
       </div>
