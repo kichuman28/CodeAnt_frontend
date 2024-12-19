@@ -2,16 +2,16 @@
 
 This project is a frontend implementation for CodeAnt AI's developer platform, created as part of the Frontend Developer Intern assignment. It's built using React and Vite, featuring a modern and responsive design that works seamlessly across desktop and mobile devices.
 
+![image](https://github.com/user-attachments/assets/a265a289-b5d2-4cfc-a6a9-c10eb9328b4a)
+![image](https://github.com/user-attachments/assets/d90d5cb0-4fff-4470-bf50-3bbef94f3de9)
+
+
 ## Features
 
 - 🔐 Authentication System with SAAS/Self-hosted options
 - 📱 Fully Responsive Design
 - 🎨 Clean and Modern UI
 - 📊 Repository Management Dashboard
-- 🔍 AI Code Review Interface
-- ☁️ Cloud Security Integration
-- 📘 Documentation Section
-- ⚙️ Settings Management
 - 💻 Multi-device Support
 
 ## Tech Stack
@@ -20,7 +20,6 @@ This project is a frontend implementation for CodeAnt AI's developer platform, c
 - Vite
 - TailwindCSS
 - React Router DOM
-- Heroicons
 
 ## Getting Started
 
