@@ -13,31 +13,57 @@ const DUMMY_REPOS = [
     size: '5871 KB',
     updatedAt: '2 days ago'
   },
-  // Add more dummy data as needed
+  {
+    name: 'analytics-dashboard',
+    isPublic: false,
+    language: 'Python',
+    size: '4521 KB',
+    updatedAt: '5 days ago'
+  },
+  {
+    name: 'mobile-app',
+    isPublic: true,
+    language: 'Swift',
+    size: '3096 KB',
+    updatedAt: '3 days ago'
+  },
+  {
+    name: 'e-commerce-platform',
+    isPublic: false,
+    language: 'Java',
+    size: '6210 KB',
+    updatedAt: '6 days ago'
+  }
 ];
 
 export const RepositoryList = () => {
   return (
-    <div className="space-y-4">
-      {DUMMY_REPOS.map((repo) => (
-        <div key={repo.name} className="bg-white p-4 rounded-lg border">
-          <div className="flex items-center justify-between">
-            <div>
-              <div className="flex items-center gap-2">
-                <h3 className="text-lg font-medium">{repo.name}</h3>
-                <span className="px-2 py-1 text-xs rounded bg-gray-100">
-                  {repo.isPublic ? 'Public' : 'Private'}
-                </span>
-              </div>
-              <div className="flex items-center gap-4 mt-2 text-sm text-gray-600">
-                <span>● {repo.language}</span>
-                <span>{repo.size}</span>
-                <span>Updated {repo.updatedAt}</span>
+    <div className="bg-white -m-6 mt-2">
+      <div className="h-px bg-gray-200" />
+      {DUMMY_REPOS.map((repo, index) => (
+        <div key={repo.name}>
+          <div className="p-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="flex items-center gap-2">
+                  <h3 className="text-lg font-medium">{repo.name}</h3>
+                  <span className={`px-2 py-1 text-xs rounded ${
+                    repo.isPublic ? 'bg-blue-50 text-blue-600' : 'bg-gray-100'
+                  }`}>
+                    {repo.isPublic ? 'Public' : 'Private'}
+                  </span>
+                </div>
+                <div className="flex items-center gap-4 mt-2 text-sm text-gray-600">
+                  <span>● {repo.language}</span>
+                  <span>{repo.size}</span>
+                  <span>Updated {repo.updatedAt}</span>
+                </div>
               </div>
             </div>
           </div>
+          {index < DUMMY_REPOS.length - 1 && <div className="h-px bg-gray-200" />}
         </div>
       ))}
     </div>
   );
-}; 
+};
