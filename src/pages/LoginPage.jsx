@@ -3,6 +3,7 @@ import StatsCard from '../components/StatsCard';
 import IssuesCard from '../components/IssuesCard';
 import LoginOptions from '../components/LoginOptions';
 import { AntLogo } from '../ui/icons/AntLogo';
+import { BackgroundLogo } from '../ui/icons/BackgroundLogo';
 
 const LoginPage = () => {
   const [isSaaS, setIsSaaS] = useState(true);
@@ -15,11 +16,7 @@ const LoginPage = () => {
           <StatsCard />
           <IssuesCard />
         </div>
-        <img 
-          src="/ant-logo.png" 
-          alt="Background Logo" 
-          className="absolute bottom-0 left-0 opacity-20 w-96"
-        />
+        <BackgroundLogo className="absolute bottom-0 left-0 opacity-60 w-96" />
       </div>
 
       {/* Right Section */}

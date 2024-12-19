@@ -1,8 +1,10 @@
+import { AntLogo } from '../ui/icons/AntLogo';
+
 const StatsCard = () => {
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 mb-4">
       <div className="flex justify-between mb-4">
-        <img src="/placeholder-logo.png" alt="AI Logo" className="h-8" />
+        <AntLogo className="h-8" />
         <p className="text-gray-800">AI to Detect & Autofix Bad Code</p>
       </div>
       <div className="flex justify-between">
