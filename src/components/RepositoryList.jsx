@@ -1,3 +1,4 @@
+import { DatabaseIcon } from '../ui/icons/DatabaseIcon';
 const DUMMY_REPOS = [
   {
     name: 'design-system',
@@ -47,15 +48,16 @@ export const RepositoryList = () => {
               <div>
                 <div className="flex items-center gap-2">
                   <h3 className="text-lg font-medium">{repo.name}</h3>
-                  <span className={`px-2 py-1 text-xs rounded ${
-                    repo.isPublic ? 'bg-blue-50 text-blue-600' : 'bg-gray-100'
-                  }`}>
+                  <span className="px-2 py-1 text-xs rounded-xl border border-[#B2DDFF] bg-blue-50 text-[#175CD3]">
                     {repo.isPublic ? 'Public' : 'Private'}
                   </span>
                 </div>
-                <div className="flex items-center gap-4 mt-2 text-sm text-gray-600">
-                  <span>● {repo.language}</span>
-                  <span>{repo.size}</span>
+                <div className="flex items-center gap-8 mt-2 text-sm text-gray-600">
+                  <span>{repo.language} <span className="text-[#1570EF]">●</span></span>
+                  <span className="flex items-center gap-1">
+                    <DatabaseIcon className="w-3 h-3" />
+                    {repo.size}
+                  </span>
                   <span>Updated {repo.updatedAt}</span>
                 </div>
               </div>
