@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { GithubIcon } from '../ui/icons/GithubIcon';
 import { BitbucketIcon } from '../ui/icons/BitbucketIcon';
 import { AzureIcon } from '../ui/icons/AzureIcon';
@@ -16,6 +17,13 @@ const LoginOption = ({ Icon, text, onClick }) => (
 );
 
 const LoginOptions = ({ isSaaS }) => {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    // Add any login logic here if needed
+    navigate('/repositories');
+  };
+
   const saasOptions = [
     { Icon: GithubIcon, text: "Sign in with Github" },
     { Icon: BitbucketIcon, text: "Sign in with Bitbucket" },
@@ -37,7 +45,7 @@ const LoginOptions = ({ isSaaS }) => {
           key={index}
           Icon={option.Icon}
           text={option.text}
-          onClick={() => console.log(`Clicked: ${option.text}`)}
+          onClick={handleLogin}
         />
       ))}
     </div>
